@@ -5,17 +5,38 @@ def main():
     article_list = []
     article_name = input('Artikelname > ')
     while article_name != 'Exit':
-        article = find_article(article_list, article_name)
-        if article is None:
-            article = Article(article_name, 0.0, 0)
-            article_list.append(article)
-            article.price = input_float('Preis       > ')
+        if article_name == 'Inventory':
+            handle_inventory(article_list)
+            article_name = input('Artikelname > ')
+            continue
         else:
-            print('Bestand     : ' + str(article.stock))
-        amount = input_float('Menge       > ')
-        article.stock = (article.stock + amount)
-        article_name = input('Artikelname > ')
+            article = find_article(article_list, article_name)
+
+            if article is None:
+                article = Article(article_name, 0.0, 0)
+                article_list.append(article)
+                article.price = input_float('Preis       > ')
+            else:
+                print('Bestand     : ' + str(article.stock))
+
+            amount = input_float('Menge       > ')
+            article.stock = (article.stock + amount)
+            article_name = input('Artikelname > ')
+
     return article_list
+
+
+def handle_inventory(list):
+    """
+    prints the inventory and the total value
+    :param list: the article list
+    :return: None
+    """
+    sum = 0
+    for article in list:
+        sum = sum + article.article_value
+        print(article.name + ' : ' + str(article.article_value))
+    print('Gesamt : ' + str(sum))
 
 
 def input_int(prompt):

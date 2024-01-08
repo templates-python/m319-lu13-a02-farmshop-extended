@@ -10,6 +10,9 @@ class Article:
     price: float
     stock: int
 
+    @property
+    def article_value(self):
+        return self.price * self.stock
 
 if __name__ == '__main__':
     pass
