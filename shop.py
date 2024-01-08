@@ -18,19 +18,6 @@ def main():
     return article_list
 
 
-def handle_inventory(list):
-    """
-    prints the inventory and the total value
-    :param list: the article list
-    :return: None
-    """
-    sum = 0
-    for article in list:
-        sum = sum + article.article_value
-        print(article.name + ' : ' + str(article.article_value))
-    print('Gesamt : ' + str(sum))
-
-
 def input_int(prompt):
     """
     reads an integer input from the user
