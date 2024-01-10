@@ -29,7 +29,7 @@ def input_int(prompt):
         try:
             number = int(input(prompt))
         except ValueError:
-            print("Please, enter a whole number!")
+            print('Please, enter a whole number!')
             continue
     return number
 
@@ -37,7 +37,7 @@ def input_int(prompt):
 def input_float(prompt):
     """
     reads a decimal number input from the user
-    :param text: the prompt to be shown
+    :param prompt: the prompt to be shown
     :return: the decimal number
     """
     number = None
@@ -45,19 +45,19 @@ def input_float(prompt):
         try:
             number = float(input(prompt))
         except ValueError:
-            print("Please, enter a real number!")
+            print('Please, enter a real number!')
             continue
     return number
 
 
-def find_article(list, name):
+def find_article(articlelist, name):
     """
     finds an article in the article list
-    :param list: the article list
+    :param articlelist: the article list
     :param name: the article name to be found
     :return: article or None=not found
     """
-    for article in list:
+    for article in articlelist:
         if article.name == name:
             return article
     return None
