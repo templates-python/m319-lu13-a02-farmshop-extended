@@ -32,7 +32,7 @@ def test_output_inventory(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert captured.out == ('Bestand     : 30.0\n'
                             'Bestand     : 7.0\n'
-                            'Ei : 19.5\n'
-                            'Käse : 275.70000000000005\n'
-                            'Gesamt : 295.20000000000005\n'
+                            'Ei          : 19.5\n'
+                            'Käse        : 275.70000000000005\n'
+                            'Gesamt      : 295.20000000000005\n'
                             )
