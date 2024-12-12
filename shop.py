@@ -19,7 +19,7 @@ def main():
             else:
                 print('Bestand     : ' + str(article.stock))
 
-            amount = input_float('Menge       > ')
+            amount = input_int('Menge       > ')
             article.stock = (article.stock + amount)
             article_name = input('Artikelname > ')
 
@@ -85,4 +85,4 @@ def find_article(articlelist, name):
 
 
 if __name__ == '__main__':
-    main()
+    print(main().__repr__())
